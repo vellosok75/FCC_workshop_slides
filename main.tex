@@ -217,4 +217,58 @@
 \end{frame}
 
 \section{Fast ORM Measruement}
+\begin{frame}{Fast ORM Measurement}
+    \begin{minipage}{0.44\textwidth}
+        \begin{figure}
+            \centering
+            \includegraphics[width=\textwidth]{MOPOTK002_f1.png}
+        \end{figure}
+    \end{minipage}
+    \begin{minipage}{0.55\textwidth}
+        \begin{itemize}
+            \scriptsize
+            \item Fitting to $i$-th BPM data $u_i(t_j)$:
+                \begin{equation*}
+                    \begin{bmatrix}
+                        \cos (2\pi f_{1} t_{1}) & \sin( 2\pi f_{1} t_{1}) & ... &\\
+                        \cos (2\pi f_{1} t_{2}) & \sin (2\pi f_{1} t_{2}) & ...& \\
+                        \vdots  & \vdots  & & \\
+                        \cos (2\pi f_{1} t_{n}) & \sin (2\pi f_{1} t_{n}) & ... &
+                        \end{bmatrix}\begin{bmatrix}
+                            b_{i}{}_{1}\\
+                            c_{i}{}_{1}\\
+                            \vdots \\
+                            b_{i}{}_{m}\\
+                            c_{i}{}_{m}
+                        \end{bmatrix} =\begin{bmatrix}
+                            u_{i}( t_{1})\\
+                            u_{i}( t_{2})\\
+                            \vdots \\
+                            u_{i}( t_{n})
+                        \end{bmatrix}
+                \end{equation*}
+            \item Expected beam motion $$\Delta u_i(t)_n = \sum_j a_{i,j}\sin(2\pi f_j t_n + \phi_{i,j})$$
+                \begin{equation*}
+                    a_{i,j}=\sqrt{b^2_{i,j}+c^2_{i,j}}, \quad \phi_{i,j}=\text{atan}2(b_{i,j},c_{i,j})\in(-\pi,\pi]
+                \end{equation*}
+            \item ORM elements:
+                \begin{equation*}
+                    M_{ij}=\text{sgn}(\phi_{i,j})\frac{a_{i,j}}{\Delta \theta_j},
+                \end{equation*}
+        \end{itemize}
+    \end{minipage}
+\end{frame}
+\begin{frame}{Measurements at SIRIUS storage ring}
+    SIRIUS BPMs-CMs circuit
+    \begin{itemize}
+        \item 160 BPM buttons
+        \item $n_x = 120$ CHs, $n_y=160$ CVs, $n=n_x+n_y=280$ CMs
+    \end{itemize}
+    Measurment
+    \begin{itemize}
+        \item We excited the beam by driving the CMs of each of the \textbf{20 sectors} present in the Sirius storage ring.
+        \item At each sector, the \textbf{6 CHs} drove frequencies $f_x = 3,  7, 13, 19, 29, 37\ \unit{Hz}$ and the \textbf{8 CVs} drove frequencies $f_y = 5, 11, 17, 23, 31, 41, 47, 59\ \unit{Hz}$.
+        \item  The complete measurement took around $2.5-3\ \unit{min}$ to be completed
+    \end{itemize}
+\end{frame}
 \end{document}
