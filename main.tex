@@ -31,6 +31,7 @@
 \usepackage{tabularx}
 \usepackage{extarrows}
 \usepackage{booktabs}
+\usepackage{centernot}
 \usetikzlibrary{fadings}
 \usetikzlibrary{patterns}
 \usetikzlibrary{shadows.blur}
@@ -38,15 +39,13 @@
 
 
 
-\title[quali_slides]{Online tuning of storage ring non-linear dynamics at SIRIUS and fast ORM measurement}
+\title{Online tuning of storage ring non-linear dynamics at SIRIUS and fast ORM measurement}
 
-\author{Matheus Melo Santos Velloso \\{\small Ms.C student}\\
-\vspace{0.5cm}
-on behalf of the LNLS Accelerator Physics Group}
+\author{Matheus Melo Santos Velloso \\{\small MSc. student}}
 
 \institute{Gleb Wataghin Institute of Physics - University of Campinas\\ Accelerator Physics Group (FAC) -  Brazilian Syncrhotron Laboratory (LNLS)}
 
-\date{June 2023}
+\date{Optics Tuning and Corrections for Future Colliders Workshop \\ CERN, June 2023}
 
 \AtBeginSection[]
 {
@@ -62,50 +61,88 @@ on behalf of the LNLS Accelerator Physics Group}
 \end{frame}
 
 \section{Introduction}
-\begin{frame}{SIRIUS}
-    \begin{minipage}{0.45\textwidth}
+\begin{frame}{SIRIUS storage ring}
+    \begin{minipage}{0.35\textwidth}
         \begin{figure}
             \centering
-            \includegraphics[width=\textwidth]{f1.png}
+            \includegraphics[angle=90, width=0.7\textwidth]{f1.png}
         \end{figure}
     \end{minipage}
     \hfill
-    \begin{minipage}{0.45\textwidth}
-        \begin{itemize}
-            \item 4th generation storage ring-based synchrotron light source
-            \item LINAC, booster, storage ring
-            \item Storage ring: $518~\unit{\m}$ in circumf, $3~\unit{GeV}$, nominal energy
-            \item $100~\unit{mA}$ current, top-up injection mode
-        \end{itemize}
+    \begin{minipage}{0.62\textwidth}
+        \scriptsize
+        Designed, built and operated by the Brazilian Synchrotron Laboratory (LNLS), at the Brazilian Center for Research in Energy and Materials (CNPEM) campus, at Campinas, Brazil.\\
+
+        \begin{tabular}{lccc}
+                \toprule\toprule
+                Parameter & & Currently & Phase I \\
+                \toprule
+                Energy  & $E_0$  & $\SI{3}{\giga\electronvolt}$ & \\
+                Current & $I_0$ &  $\SI{100}{\milli\ampere}$ & $\SI{350}{\milli\ampere}$ \\
+                Operation mode & & Top-up &      \\
+                RF Cavities & & 1 NC & 2 SC + HC \\
+                RF Voltage & $\hat{V}_{\mathrm{rf}}$ &  $\SI{1.5}{\mega\volt}$ & $\SI{3.0}{\mega\volt}$\\
+                RF Frequency &   $f_{\mathrm{rf}}$ &  $\SI{499.667}{\mega\hertz}$ &  \\
+                Harmonic Number &   $h$ &  864 \\
+                Momentum compaction factor & $\alpha$ &   $\SI{1.6e-4}{}$ & \\
+                Energy Spread & $\sigma_\delta$ &  $\SI{8.5e-4}{}$ & \\
+                Bunch length & $\sigma_z$ &  $\SI{2.5}{\milli\meter}$ & $\SI{12}{\milli\meter}$ \\
+                Energy loss p/ turn & $U_0$ &  $\SI{470}{\kilo\electronvolt}$ & $\SI{870}{\kilo\electronvolt}$ \\
+                Lifetime & $\tau$ & $\SI{15}{\hour}$ & $>\SI{10}{\hour}$ \\
+                % Synchrotron Tune & $\nu_z$ & $\SI{0.001638}{}$ \\
+                % Frequência Síncrotron & $f_z$ &  $\SI{2.5}{\kilo\hertz}$ & \\
+                % Amortecimento Longitudinal & $\tau_\delta$ &  $\SI{13}{\milli\second}$ & \\             % \\
+                % \bottomrule
+                % HC Type &  & Passive SC \\
+                % HC RF harmonic & $q$ & 3 \\
+                % HC Shunt Impedance & $R_s$ & $\SI{8.25}{\mega\ohm}$ \\
+                % HC Quality Factor & $Q$ & $\SI{20800}{}$ \\
+                % HC R/Q & $R/Q$ & $\SI{396}{\ohm}$ \\
+                \bottomrule\bottomrule
+        \end{tabular}
     \end{minipage}
 \end{frame}
 
-\begin{frame}{The dissertation problem}
-    Off-axis injection scheme
+\begin{frame}{SIRIUS Lattice and Optics}
+    20-cell 5BA lattice with 5-fold symmetric high (A) and low (B, P) betatron functions sections
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.8\textwidth]{SI_superperiod.png}
+    \end{figure}
+    \begin{figure}
+        \includegraphics[width=0.8\textwidth]{linear_optics.pdf}
+    \end{figure}
+\end{frame}
+
+\section{Online tuning of storage ring non-linear dynamics}
+\begin{frame}{Off-axis injection scheme}
     \begin{figure}
         \centering
         \includegraphics[width=0.7\textwidth]{injection.pdf}
     \end{figure}
-    \pause
     \begin{figure}
         \centering
         \includegraphics[width=0.6\textwidth]{nlk_phase_space.png}
     \end{figure}
 \end{frame}
-
-\section{Online optimization of Dynamic Aperture}
-\begin{frame}{SIRIUS Dynamic Aperture Optimization}
+\begin{frame}{Tuning at $\nu_x = 49.08, \nu_y = 14.14$ (Working Point 1)}
     \begin{minipage}{0.55\textwidth}
-        Working point $\nu_x, = 49.08, \nu_y = 14.14$
         \begin{figure}
             \centering
             \includegraphics[width=\textwidth]{oldtunes_history.pdf}
-            \includegraphics[width = 0.8\textwidth]{WEPL087_f1.pdf}
+            \includegraphics[width = 0.75\textwidth]{WEPL087_f1.pdf}
             \vfill
-            \begin{itemize}
-                \item injection efficiency: $98\pm1~\%$ run 2
-                \item 1 hour reduction in lifetime
-            \end{itemize}
+            \scriptsize
+            \begin{table}[]
+                \begin{tabular}{cc}
+                \hline
+                configuration & injection efficiency $[\%]$ \\ \hline
+                ref-config    & $88\pm8$                    \\
+                run 1         & $91\pm1$                    \\
+                run 2         & $98\pm1$                     \\
+                run 3         & $87\pm3$                     \\ \hline
+                \end{tabular}
+                \end{table}
         \end{figure}
     \end{minipage}
     \hfill
@@ -116,17 +153,22 @@ on behalf of the LNLS Accelerator Physics Group}
         \end{figure}
     \end{minipage}
 \end{frame}
-\begin{frame}{SIRIUS Dynamic Aperture Optimization}
+\begin{frame}{Tuning at $\nu_x = 49.20, \nu_y = 14.25$ (Working Point 2)}
     \begin{minipage}{0.55\textwidth}
-        Working point $\nu_x, = 49.20, \nu_y = 14.25$
         \begin{figure}
             \centering
             \includegraphics[width=\textwidth]{newtunes_history.pdf}
-            \includegraphics[width = 0.8\textwidth]{WEPL087_f3.pdf}
-            \begin{itemize}
-                \item injection efficiency: $79\pm3~\%$ run 1
-                \item no reduction in lifetime
-            \end{itemize}
+            \includegraphics[width = 0.75\textwidth]{WEPL087_f3.pdf}
+            \begin{table}[]
+                \scriptsize
+                \begin{tabular}{cc}
+                \hline
+                configuration & injection efficiency $[\%]$  \\ \hline
+                non-optimized    & $51\pm1$                   \\
+                run 1            & $79\pm3$                    \\
+                run 2            & $65\pm1$                     \\ \hline
+                \end{tabular}
+                \end{table}
         \end{figure}
     \end{minipage}
     \hfill
@@ -137,17 +179,21 @@ on behalf of the LNLS Accelerator Physics Group}
         \end{figure}
     \end{minipage}
 \end{frame}
-\begin{frame}{SIRIUS Dynamic Aperture Optimization}
+\begin{frame}{Tuning at $\nu_x = 49.16, \nu_y = 14.22$ (Working Point 3)}
     \begin{minipage}{0.55\textwidth}
-        Working point $\nu_x, = 49.16, \nu_y = 14.22$
         \begin{figure}
             \centering
             \includegraphics[width=\textwidth]{wp3_history.pdf}
-            \includegraphics[width = 0.8\textwidth]{wp3_kick_resilience.pdf}
-            \begin{itemize}
-                \item injection efficiency: $93\pm3~\%$ run 1
-                \item 1.5 hr reduction in lifetime
-            \end{itemize}
+            \includegraphics[width = 0.75\textwidth]{wp3_kick_resilience.pdf}
+            \begin{table}[]
+                \scriptsize
+                \begin{tabular}{cc}
+                \hline
+                configuration & injection efficiency $[\%]$  \\ \hline
+                non-optimized       & $-\pm1$                   \\
+                optimied            & $93\pm3$                    \\ \hline
+                \end{tabular}
+                \end{table}
         \end{figure}
     \end{minipage}
     \hfill
@@ -158,8 +204,16 @@ on behalf of the LNLS Accelerator Physics Group}
         \end{figure}
     \end{minipage}
 \end{frame}
-\begin{frame}
-    Thank you!
+
+\begin{frame}{Summary}
+    \begin{itemize}
+    \item Tuning was effective at optimizing injection efficiency
+    \item Some mysteries
+    \begin{itemize}
+        \item Larger kick resiliency $\centernot\implies$ larger phase portrait areas $\centernot\implies$ injection efficiency
+    \end{itemize}
+    \item A good sextupole setting was found in WP 3, which contributed for SIRIUS recent milestone of reaching $<1\% \sigma_x$ and $<4\% \sigma _y$ orbit stability in the horizontal and vertical, respectively
+    \end{itemize}
 \end{frame}
 
 \section{Fast ORM Measruement}
