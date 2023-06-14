@@ -49,16 +49,19 @@
 
 \AtBeginSection[]
 {
-    \begin{frame}
+    \begin{frame}[noframenumbering,plain]
          \tableofcontents[currentsection]
    \end{frame}
 }
 
 \begin{document}
-\maketitle
-\begin{frame}{Contents}
-    \tableofcontents
+\begin{frame}[plain]
+    \maketitle
 \end{frame}
+
+% \begin{frame}{Contents}
+%     \tableofcontents
+% \end{frame}
 
 \section{Introduction}
 \begin{frame}{SIRIUS storage ring}
@@ -112,6 +115,10 @@
     \begin{figure}
         \includegraphics[width=0.8\textwidth]{linear_optics.pdf}
     \end{figure}
+\end{frame}
+
+\begin{frame}{SIRIUS Sextupole families}
+
 \end{frame}
 
 \section{Online tuning of storage ring non-linear dynamics}
@@ -205,16 +212,16 @@
     \end{minipage}
 \end{frame}
 
-\begin{frame}{Summary}
-    \begin{itemize}
-    \item Tuning was effective at optimizing injection efficiency
-    \item Some mysteries
-    \begin{itemize}
-        \item Larger kick resiliency $\centernot\implies$ larger phase portrait areas $\centernot\implies$ injection efficiency
-    \end{itemize}
-    \item A good sextupole setting was found in WP 3, which contributed for SIRIUS recent milestone of reaching $<1\% \sigma_x$ and $<4\% \sigma _y$ orbit stability in the horizontal and vertical, respectively
-    \end{itemize}
-\end{frame}
+% \begin{frame}{Summary}
+%     \begin{itemize}
+%     \item Tuning was effective at optimizing injection efficiency
+%     \item Some mysteries
+%     \begin{itemize}
+%         \item Larger kick resiliency $\centernot\implies$ larger phase portrait areas $\centernot\implies$ injection efficiency
+%     \end{itemize}
+%     \item A good sextupole setting was found in WP 3, which contributed for SIRIUS recent milestone of reaching $<1\% \sigma_x$ and $<4\% \sigma _y$ orbit stability in the horizontal and vertical, respectively
+%     \end{itemize}
+% \end{frame}
 
 \section{Fast ORM Measruement}
 \begin{frame}{Fast ORM Measurement}
@@ -223,6 +230,9 @@
             \centering
             \includegraphics[width=\textwidth]{MOPOTK002_f1.png}
         \end{figure}
+        \tiny
+        M.M.S. Velloso, M.B. Alves, and F.H. de Sá,
+   \textquotedblleft{Fast Orbit Response Matrix Measurement via Sine-Wave Excitation of Correctors at SIRIUS}\textquotedblright, in \emph{Proc. IPAC'22}, Bangkok, Thailand, Jun. 2022, pp. 425--428.
     \end{minipage}
     \begin{minipage}{0.55\textwidth}
         \begin{itemize}
@@ -258,17 +268,38 @@
         \end{itemize}
     \end{minipage}
 \end{frame}
-\begin{frame}{Measurements at SIRIUS storage ring}
-    SIRIUS BPMs-CMs circuit
+\begin{frame}{Measurements at SIRIUS storage ring and LOCO performance}
+    \begin{minipage}{0.49\textwidth}
+        \scriptsize
+        SIRIUS BPMs-CMs circuit
+        \begin{itemize}
+            \item 160 BPM buttons
+            \item $n_x = 120$ CHs, $n_y=160$ CVs, $n=n_x+n_y=280$ CMs
+        \end{itemize}
+        Measurment Procedure
+        \begin{itemize}
+            \item At each one of the \textbf{20 sectors},
+            \begin{itemize}
+            \scriptsize
+            \item \textbf{6 CHs} $f_x = 3,  7, 13, 19, 29, 37\ \unit{Hz}$
+            \item \textbf{8 CVs} $f_y = 5, 11, 17, 23, 31, 41, 47, 59\ \unit{Hz}$
+            \item $\unit{5~\micro rad}$ strength, during $\unit{4~seconds}$.
+            \end{itemize}
+            \item  The complete measurement took around $2.5-3\ \unit{min}$.
+        \end{itemize}
+    AC- and DC-ORM signature correlation
     \begin{itemize}
-        \item 160 BPM buttons
-        \item $n_x = 120$ CHs, $n_y=160$ CVs, $n=n_x+n_y=280$ CMs
+        \scriptsize
+        \item $\cos\theta_j = \vb{v}_{\text{AC}, j}\centerdot \vb{v}_{\text{DC}, j}/\norm{\vb{v}_{\text{AC}, j}}\norm{\vb{v}_{\text{DC}, j}}$
+        \item avg $|1 - \cos\theta_j|\sim0.03\%$ for diagonal blocks and $\sim3\%$ for off-diagonal blocks
     \end{itemize}
-    Measurment
-    \begin{itemize}
-        \item We excited the beam by driving the CMs of each of the \textbf{20 sectors} present in the Sirius storage ring.
-        \item At each sector, the \textbf{6 CHs} drove frequencies $f_x = 3,  7, 13, 19, 29, 37\ \unit{Hz}$ and the \textbf{8 CVs} drove frequencies $f_y = 5, 11, 17, 23, 31, 41, 47, 59\ \unit{Hz}$.
-        \item  The complete measurement took around $2.5-3\ \unit{min}$ to be completed
-    \end{itemize}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.49\textwidth}
+        \begin{figure}
+            \centering
+            \includegraphics[width=\textwidth]{MOPOTK002_f5.pdf}
+        \end{figure}
+    \end{minipage}
 \end{frame}
 \end{document}
