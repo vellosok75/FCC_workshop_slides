@@ -107,18 +107,14 @@
 \end{frame}
 
 \begin{frame}{SIRIUS Lattice and Optics}
-    20-cell 5BA lattice with 5-fold symmetric high (A) and low (B, P) betatron functions sections
+    20-cell 5BA lattice with 5-fold symmetric high (A) and low (B, P) betatron functions sections. Superperiod = A-B-P-B
     \begin{figure}
         \centering
         \includegraphics[width=0.8\textwidth]{SI_superperiod.png}
     \end{figure}
     \begin{figure}
-        \includegraphics[width=0.8\textwidth]{linear_optics.pdf}
+        \includegraphics[width=0.8\textwidth]{beta_functions.pdf}
     \end{figure}
-\end{frame}
-
-\begin{frame}{SIRIUS Sextupole families}
-
 \end{frame}
 
 \section{Online tuning of storage ring non-linear dynamics}
@@ -131,6 +127,32 @@
         \centering
         \includegraphics[width=0.6\textwidth]{nlk_phase_space.png}
     \end{figure}
+\end{frame}
+
+\begin{frame}{The optimization setup}
+    \begin{minipage}{0.49\textwidth}
+        21 sextupole families
+        \begin{table}[]
+            \begin{tabular}{cl}
+            \hline
+            achromatic & \begin{tabular}[c]{@{}l@{}}SFA0, SDA0, \\ SFB0, SDB0,\\ SDP0, SFP0\end{tabular}                                                                \\ \hline
+            chromatic  & \begin{tabular}[c]{@{}l@{}}SDA1, SFA1, \\ SDA2, SFA2, \\ SDA3,\\ SDB1,\\ SDB2, SFB2, \\ SDB3, \\ SFP1, SDP1,\\ SFP2, SDP2,\\ SDP3\end{tabular} \\ \hline
+            \end{tabular}
+            \end{table}
+    \end{minipage}
+    \begin{minipage}{0.49\textwidth}
+        varying sextupoles w/o changing chromaticity
+        \begin{itemize}
+            \item knobs $\in$ chromaticity response matrix nullspace
+            \item free knobs + compensation knobs
+        \end{itemize}
+        \vspace{0.5cm}
+
+        \scriptsize
+        M. M. S. Velloso, L. Liu, F. de Sá, M. Alves, X. Resende, and X.
+        Huang, “Online optimization of SIRIUS nonlinear optics”,
+        \textit{presented at IPAC'23}, Venice, Italy, May 2023,
+    \end{minipage}
 \end{frame}
 \begin{frame}{Tuning at $\nu_x = 49.08, \nu_y = 14.14$ (Working Point 1)}
     \begin{minipage}{0.55\textwidth}
