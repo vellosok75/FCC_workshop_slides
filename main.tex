@@ -55,8 +55,44 @@
 }
 
 \begin{document}
+
 \begin{frame}[plain]
-    \maketitle
+    % Title & Subtitle
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[above right, inner sep=0pt] at (current page.south west)
+        {
+            \includegraphics[width=\paperwidth, height=\paperheight]{sirius.jpg}
+        };
+
+        \node
+        [
+            above=0cm,
+            align=center,
+            fill=white!20,
+            inner xsep=15pt,
+            inner ysep=10pt,
+            minimum width=0.7\textwidth,
+            text width=0.6\textwidth
+        ] (title) at (current page.center)
+        {
+            \LARGE Best customized Beamer Themes  \\[5pt]
+            \small Beautiful title slides: Model 1
+        };
+
+        % Author
+        \node[below=3cm] (author) at (title.south){Matheus M. S. Velloso};
+
+        % Date
+        \node[below=0.25cm] (date) at (author.south){\large \today};
+
+        [
+            below right =0.25cm and 0.5cm
+        ] at (current page.north west)
+        {
+            \includegraphics[width=3.5cm]{cnpem_lnls.png}
+        };
+
+    \end{tikzpicture}
 \end{frame}
 
 % \begin{frame}{Contents}
@@ -129,9 +165,10 @@
     \end{figure}
 \end{frame}
 
-\begin{frame}{The optimization setup}
+\begin{frame}{RCDS optimization setup}
     \begin{minipage}{0.49\textwidth}
-        21 sextupole families
+        Obj. func: avg. injection efficiency of 5 pulses @ $\unit{2~Hz}$\\
+        Knobs: 21 sextupole families
         \begin{table}[]
             \begin{tabular}{cl}
             \hline
@@ -141,7 +178,7 @@
             \end{table}
     \end{minipage}
     \begin{minipage}{0.49\textwidth}
-        varying sextupoles w/o changing chromaticity
+        Changing sextupoles w/o changing chromaticity:
         \begin{itemize}
             \item knobs $\in$ chromaticity response matrix nullspace
             \item free knobs + compensation knobs
