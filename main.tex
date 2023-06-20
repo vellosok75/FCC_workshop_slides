@@ -88,7 +88,7 @@
         ] (author) at (current page.south east)
         {
             \scriptsize \textcolor{white}{Matheus M. S. Velloso}  \\
-            \tiny \textcolor{white}{Brazilian Synchrotron Laboratory (LNLS/CNPEM)} \\
+            \tiny \textcolor{white}{Brazilian Synchrotron Light Laboratory (LNLS/CNPEM)} \\
             \tiny \textcolor{white}{Gleb Wataghin Institute of Physics (IFGW/UNICAMP)} \\
             \scriptsize \textcolor{white}{on behalf of the LNLS Accelerator Physics Group}
         };
@@ -119,7 +119,7 @@
     \hfill
     \begin{minipage}{0.62\textwidth}
         \scriptsize
-        Designed, built and operated by the Brazilian Synchrotron Laboratory (LNLS), at the Brazilian Center for Research in Energy and Materials (CNPEM) campus, at Campinas, Brazil.\\
+        Designed, built and operated by the Brazilian Synchrotron Light Laboratory (LNLS), at the Brazilian Center for Research in Energy and Materials (CNPEM) campus, at Campinas, Brazil.\\
 
         \begin{tabular}{lccc}
                 \toprule\toprule
@@ -224,7 +224,9 @@
         \begin{figure}
             \centering
             \includegraphics[width=\textwidth]{oldtunes_history.pdf}
+            \pause
             \includegraphics[width = 0.75\textwidth]{WEPL087_f1.pdf}
+            \pause
             \vfill
             \scriptsize
             \begin{table}[]
@@ -239,6 +241,7 @@
                 \end{table}
         \end{figure}
     \end{minipage}
+    \pause
     \hfill
     \begin{minipage}{0.44\textwidth}
         \begin{figure}
@@ -252,7 +255,9 @@
         \begin{figure}
             \centering
             \includegraphics[width=\textwidth]{newtunes_history.pdf}
+            \pause
             \includegraphics[width = 0.75\textwidth]{WEPL087_f3.pdf}
+            \pause
             \begin{table}[]
                 \scriptsize
                 \begin{tabular}{cc}
@@ -265,6 +270,7 @@
                 \end{table}
         \end{figure}
     \end{minipage}
+    \pause
     \hfill
     \begin{minipage}{0.44\textwidth}
         \begin{figure}
@@ -278,18 +284,21 @@
         \begin{figure}
             \centering
             \includegraphics[width=\textwidth]{wp3_history.pdf}
+            \pause
             \includegraphics[width = 0.75\textwidth]{wp3_kick_resilience.pdf}
+            \pause
             \begin{table}[]
                 \scriptsize
                 \begin{tabular}{cc}
                 \hline
                 configuration & injection efficiency $[\%]$  \\ \hline
-                non-optimized       & $-\pm1$                   \\
+                non-optimized       & $-$                   \\
                 optimied            & $93\pm3$                    \\ \hline
                 \end{tabular}
                 \end{table}
         \end{figure}
     \end{minipage}
+    \pause
     \hfill
     \begin{minipage}{0.44\textwidth}
         \begin{figure}
@@ -299,18 +308,23 @@
     \end{minipage}
 \end{frame}
 
-% \begin{frame}{Summary}
-%     \begin{itemize}
-%     \item Tuning was effective at optimizing injection efficiency
-%     \item Some mysteries
-%     \begin{itemize}
-%         \item Larger kick resiliency $\centernot\implies$ larger phase portrait areas $\centernot\implies$ injection efficiency
-%     \end{itemize}
-%     \item A good sextupole setting was found in WP 3, which contributed for SIRIUS recent milestone of reaching $<1\% \sigma_x$ and $<4\% \sigma _y$ orbit stability in the horizontal and vertical, respectively
-%     \end{itemize}
-% \end{frame}
+\begin{frame}{Summary}
+    \begin{itemize}
+    \item Oline tuning with RCDS is effective at optimizing injection efficiency
+    \item Some mysteries
+    \begin{itemize}
+        \item Larger kick resiliency $\centernot\implies$ larger phase portrait areas $\centernot\implies$ injection efficiency
+    \end{itemize}
+    \item WP 3 which contributed for SIRIUS recent milestone of reaching $<1\%~\sigma_x$ and $<4\%~\sigma _y$ orbit rms variations in the horizontal and vertical planes, respectively.\\
+    \vspace{0.5cm}
+    \scriptsize
+    L. Liu \emph{et al}., “Status of SIRIUS operation with users”,
+presented at the IPAC’23, Venice, Italy, May 2023, paper
+WEOGA2.
+    \end{itemize}
+\end{frame}
 
-\section{Fast ORM Measruement}
+\section{Fast Orbit Response Matrix Measruement}
 \begin{frame}{Fast ORM Measurement}
     \begin{minipage}{0.44\textwidth}
         \begin{figure}
@@ -360,9 +374,10 @@
         \scriptsize
         SIRIUS BPMs-CMs circuit
         \begin{itemize}
-            \item 160 BPM buttons
+            \item 160 BPMs
             \item $n_x = 120$ CHs, $n_y=160$ CVs, $n=n_x+n_y=280$ CMs
         \end{itemize}
+        \pause
         Measurment Procedure
         \begin{itemize}
             \item At each one of the \textbf{20 sectors},
@@ -370,17 +385,22 @@
             \scriptsize
             \item \textbf{6 CHs} $f_x = 3,  7, 13, 19, 29, 37\ \unit{Hz}$
             \item \textbf{8 CVs} $f_y = 5, 11, 17, 23, 31, 41, 47, 59\ \unit{Hz}$
+            \item prime frequencies to easily distinguish nonlinear harmonics
             \item $\unit{5~\micro rad}$ strength, during $\unit{4~seconds}$.
+            \item integer number of oscillations, orthogonal harmonics
             \end{itemize}
             \item  The complete measurement took around $2.5-3\ \unit{min}$.
         \end{itemize}
+    \pause
     AC- and DC-ORM signature correlation
+    \pause
     \begin{itemize}
         \scriptsize
         \item $\cos\theta_j = \vb{v}_{\text{AC}, j}\centerdot \vb{v}_{\text{DC}, j}/\norm{\vb{v}_{\text{AC}, j}}\norm{\vb{v}_{\text{DC}, j}}$
         \item avg $|1 - \cos\theta_j|\sim0.03\%$ for diagonal blocks and $\sim3\%$ for off-diagonal blocks
     \end{itemize}
     \end{minipage}
+    \pause  
     \hfill
     \begin{minipage}{0.49\textwidth}
         \begin{figure}
@@ -389,14 +409,15 @@
         \end{figure}
     \end{minipage}
 \end{frame}
-\begin{frame}[plain]
+\begin{frame}[plain, noframenumbering]
     Thank you!\\
     \vfill
     \url{matheus.velloso@lnls.br}\\
     \vfill
-    M. M. S. Velloso is supported by the São Paulo Reseach Foundation via Grant \#2022/
     \begin{figure}
         \centering
+        \scriptsize
+        M. M. S. Velloso is supported by the São Paulo Reseach Foundation via Grant \#2022/04162-4 
         \includegraphics[width=4cm]{fapesp.png}
     \end{figure}
     \begin{minipage}{0.49\textwidth}
