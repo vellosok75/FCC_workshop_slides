@@ -74,12 +74,12 @@
             \small and Fast ORM Measruement at SIRIUS
         };
 
-        \node[below = 0.4cm, align=center] at (title.south) 
-        {            
+        \node[below = 0.4cm, align=center] at (title.south)
+        {
         Optics Tuning and Corrections for Future Colliders Workshop \\[2pt]
         CERN, June 27, 2023
         };
-    
+
         % Author
         \node
         [
@@ -165,22 +165,23 @@
 \section{Online tuning of storage ring non-linear dynamics}
 \begin{frame}{Off-axis injection scheme}
     \centering
-    \includegraphics[width=\textwidth]{injection.pdf} 
-    \begin{minipage}{0.49\textwidth}
-        \begin{figure}
-            \centering
-        \end{figure}
-        \begin{figure}
-            \centering
-            \includegraphics[width=\textwidth]{nlk_phase_space.png}
-        \end{figure}
-    \end{minipage}
-    \begin{minipage}{0.49\textwidth}
-        \begin{itemize}
-            \item 100\% efficiency with a $x=-9~\unit{mm}$ DA 
-            \item $88\pm8\%$ efficiency is observed
-        \end{itemize}
-    \end{minipage}
+    \includegraphics[width=\textwidth]{off_axis_injection.png}
+    \includegraphics[width=\textwidth]{off_axis_scheme.png}
+    % \begin{minipage}{0.49\textwidth}
+    %     \begin{figure}
+    %         \centering
+    %     \end{figure}
+    %     \begin{figure}
+    %         \centering
+    %         \includegraphics[width=0.8\textwidth]{nlk_phase_space.png}
+    %     \end{figure}
+    % \end{minipage}
+    % \begin{minipage}{0.49\textwidth}
+    %     \begin{itemize}
+    %         \item 100\% efficiency with a $x=-9~\unit{mm}$ DA
+    %         \item $88\pm8\%$ efficiency is observed
+    %     \end{itemize}
+    % \end{minipage}
 
 \end{frame}
 
@@ -193,7 +194,7 @@
         \end{itemize}
         \item available knobs: 21 sextupole families \begin{itemize}
             \item knobs $\in$ chromaticity response matrix nullspace (13, 17 knobs)
-            \item 13 free knobs + 6 compensation knobs 
+            \item 13 free knobs + 6 compensation knobs
         \end{itemize}
         \end{itemize}
         \vfill
@@ -201,8 +202,7 @@
         \scriptsize
         More details:\\
 
-        M. M. S. Velloso, L. Liu, F. de Sá, M. Alves, X. Resende, and X.
-        Huang, “Online optimization of SIRIUS nonlinear optics”,
+        M. M. S. Velloso, M. B. Alves,  L. Liu, X. R. Resende, F. H. de Sá, and X. Huang, “Online optimization of SIRIUS nonlinear optics”,
         \textit{presented at IPAC'23}, Venice, Italy, May 2023,
     \end{minipage}
     \begin{minipage}{0.49\textwidth}
@@ -215,35 +215,34 @@
             chromatic  & \begin{tabular}[c]{@{}l@{}}SDA1, SFA1, \\ SDA2, SFA2, \\ SDA3,\\ SDB1,\\ SDB2, SFB2, \\ SDB3, \\ SFP1, SDP1,\\ SFP2, SDP2,\\ SDP3\end{tabular} \\ \hline
             \end{tabular}
             \end{table}
-        
+
         \vspace{0.5cm}
     \end{minipage}
 \end{frame}
 \begin{frame}{Tuning at $\nu_x = 49.08, \nu_y = 14.14$ (Working Point 1)}
-    \begin{minipage}{0.55\textwidth}
+    \begin{minipage}{0.56\textwidth}
         \begin{figure}
             \centering
             \includegraphics[width=\textwidth]{oldtunes_history.pdf}
             \pause
             \includegraphics[width = 0.75\textwidth]{WEPL087_f1.pdf}
             \pause
-            \vfill
             \scriptsize
             \begin{table}[]
-                \begin{tabular}{cc}
+                \begin{tabular}{ccc}
                 \hline
-                configuration & injection efficiency $[\%]$ \\ \hline
-                ref-config    & $88\pm8$                    \\
-                run 1         & $91\pm1$                    \\
-                run 2         & $98\pm1$                     \\
-                run 3         & $87\pm3$                     \\ \hline
+                configuration & injection efficiency $[\%]$ & lifetime @ $\unit{60~\milli\ampere}$ \\ \hline
+                ref-config    & $88\pm8$                    & 21 hrs    \\
+                run 1         & $91\pm1$                    &           \\
+                run 2         & $98\pm1$                    &  20 hrs   \\
+                run 3         & $87\pm3$                    &           \\ \hline
                 \end{tabular}
                 \end{table}
         \end{figure}
     \end{minipage}
     \pause
     \hfill
-    \begin{minipage}{0.44\textwidth}
+    \begin{minipage}{0.42\textwidth}
         \begin{figure}
             \centering
             \includegraphics[height=0.9\textheight]{WEPL087_f2.pdf}
@@ -260,12 +259,12 @@
             \pause
             \begin{table}[]
                 \scriptsize
-                \begin{tabular}{cc}
+                \begin{tabular}{ccc}
                 \hline
-                configuration & injection efficiency $[\%]$  \\ \hline
-                non-optimized    & $51\pm1$                   \\
-                run 1            & $79\pm3$                    \\
-                run 2            & $65\pm1$                     \\ \hline
+                configuration & injection efficiency $[\%]$ & lifetime @ $\unit{60~\milli\ampere}$ \\ \hline
+                non-optimized    & $51\pm1$                 &  18 hrs \\
+                run 1            & $79\pm3$                 &  21 hrs  \\
+                run 2            & $65\pm1$                 &           \\ \hline
                 \end{tabular}
                 \end{table}
         \end{figure}
@@ -289,11 +288,11 @@
             \pause
             \begin{table}[]
                 \scriptsize
-                \begin{tabular}{cc}
+                \begin{tabular}{ccc}
                 \hline
-                configuration & injection efficiency $[\%]$  \\ \hline
-                non-optimized       & $-$                   \\
-                optimied            & $93\pm3$                    \\ \hline
+                configuration & injection efficiency $[\%]$  & lifetime @ $\unit{60~\milli\ampere}$  \\ \hline
+                non-optimized        &                       &          \\
+                optimized            & $93\pm3$              &    19.5 hrs   \\ \hline
                 \end{tabular}
                 \end{table}
         \end{figure}
@@ -315,13 +314,23 @@
     \begin{itemize}
         \item Larger kick resiliency $\centernot\implies$ larger phase portrait areas $\centernot\implies$ injection efficiency
     \end{itemize}
-    \item WP 3 which contributed for SIRIUS recent milestone of reaching $<1\%~\sigma_x$ and $<4\%~\sigma _y$ orbit rms variations in the horizontal and vertical planes, respectively.\\
-    \vspace{0.5cm}
-    \scriptsize
-    L. Liu \emph{et al}., “Status of SIRIUS operation with users”,
-presented at the IPAC’23, Venice, Italy, May 2023, paper
-WEOGA2.
+    \pause
+    \item WP 3 contributed for SIRIUS recent milestone of reaching $<1\%~\sigma_x$ and $<4\%~\sigma _y$ orbit rms variations in the horizontal and vertical planes, respectively.\\
     \end{itemize}
+    \begin{minipage}{0.7\textwidth}
+        \begin{figure}
+            \centering
+            \includegraphics[width=0.9\textwidth]{WEOGA2_f5.png}
+        \end{figure}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.29\textwidth}
+        \scriptsize
+        L. Liu \emph{et al}., “Status of SIRIUS operation with users”,
+    presented at the IPAC’23, Venice, Italy, May 2023, paper
+    WEOGA2.
+
+    \end{minipage}
 \end{frame}
 
 \section{Fast Orbit Response Matrix Measruement}
@@ -400,7 +409,7 @@ WEOGA2.
         \item avg $|1 - \cos\theta_j|\sim0.03\%$ for diagonal blocks and $\sim3\%$ for off-diagonal blocks
     \end{itemize}
     \end{minipage}
-    \pause  
+    \pause
     \hfill
     \begin{minipage}{0.49\textwidth}
         \begin{figure}
@@ -417,7 +426,7 @@ WEOGA2.
     \begin{figure}
         \centering
         \scriptsize
-        M. M. S. Velloso is supported by the São Paulo Reseach Foundation via Grant \#2022/04162-4 
+        M. M. S. Velloso is supported by the São Paulo Reseach Foundation via Grant \#2022/04162-4
         \includegraphics[width=4cm]{fapesp.png}
     \end{figure}
     \begin{minipage}{0.49\textwidth}
@@ -431,6 +440,6 @@ WEOGA2.
         \end{figure}
     \end{minipage}
     \vfill
-    
+
 \end{frame}
 \end{document}
