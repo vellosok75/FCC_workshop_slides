@@ -119,7 +119,7 @@
     \hfill
     \begin{minipage}{0.62\textwidth}
         \scriptsize
-        Designed, built and operated by the Brazilian Synchrotron Light Laboratory (LNLS), at the Brazilian Center for Research in Energy and Materials (CNPEM) campus, at Campinas, Brazil.\\
+        4th generation storage ring based Synchrotron Light Source. Designed, built and operated by the Brazilian Synchrotron Light Laboratory (LNLS), at the Brazilian Center for Research in Energy and Materials (CNPEM), Campinas, Brazil.\\
 
         \begin{tabular}{lccc}
                 \toprule\toprule
@@ -190,18 +190,20 @@
         \scriptsize
         Robust conjugate direction search (RCDS) for DA optimization:
         \begin{itemize}
-        \item objective function: avg. injection efficiency of 5 pulses @ $\unit{2~Hz}$ ($\sigma\approx1\%$)
+        \item objective function:
         \begin{itemize}
             \scriptsize
-            \item beam at the DA border to reduce efficiency
+            \item avg. injection efficiency of 5 pulses @ $\unit{2~Hz}$ ($\sigma\approx1\%$)
+            \item beam steered to the DA border to reduce efficiency
+            \item kick resilience optimization $\centernot\implies$ injection efficiency optimization
         \end{itemize}
         \item available knobs: 21 sextupole families
         \begin{itemize}
             \scriptsize
-            \item knobs $\in$ chromaticity response matrix nullspace (13, 17 knobs)
-            \item 13 free knobs + 6 compensation knobs
+            \item chromaticity response matrix nullspace singular-vectors (13, 17 knobs)
+            \item 13 free families + 6 compensation families
         \end{itemize}
-        \item  Tuning in 3 machine working points: higher fractional tunes for improved orbit stability
+        \item  Tuning in 3 machine working points: higher fractional tunes to reduce amplification factors and improve orbit stability
         \end{itemize}
         \vfill
         \tiny
@@ -218,7 +220,7 @@
             \begin{tabular}{cl}
             \hline
             achromatic & \begin{tabular}[c]{@{}l@{}}SFA0, SDA0, \\ SFB0, SDB0,\\ SDP0, SFP0\end{tabular}                                                                \\ \hline
-            chromatic  & \begin{tabular}[c]{@{}l@{}}SDA1, SFA1, \\ SDA2, SFA2, \\ SDA3,\\ SDB1,\\ SDB2, SFB2, \\ SDB3, \\ SFP1, SDP1,\\ SFP2, SDP2,\\ SDP3\end{tabular} \\ \hline
+            chromatic  & \begin{tabular}[c]{@{}l@{}}SDA1, SFA1, \\ SDA2, SFA2, \\ SDA3,\\ SDB1, \textcolor{red}{SFB1}\\ SDB2, SFB2, \\ SDB3, \\ \textcolor{red}{SFP1}, SDP1,\\ SDP2, SFP2\\ SDP3\end{tabular} \\ \hline
             \end{tabular}
             \end{table}
 
@@ -313,34 +315,35 @@
     \end{minipage}
 \end{frame}
 
+\begin{frame}{Improvements to orbit stability}
+WP 3 contributed for SIRIUS recent achievement of reaching $<1\%~\sigma_x$ and $<4\%~\sigma _y$ orbit rms variations in the horizontal and vertical planes, respectively.\\
+\vfill
+\begin{minipage}{0.7\textwidth}
+    \begin{figure}
+        \includegraphics[width=0.9\textwidth]{WEOGA2_f5.png}
+            \begin{flushleft}
+            \tiny Courtesy of Daniel Tavares
+        \end{flushleft}
+    \end{figure}
+\end{minipage}
+\hfill
+\begin{minipage}{0.29\textwidth}
+    \scriptsize
+    L. Liu \emph{et al}., “Status of SIRIUS operation with users”,
+presented at the IPAC’23, Venice, Italy, May 2023, paper
+WEOGA2.
+\end{minipage}
+\end{frame}
 \begin{frame}{Summary}
     \begin{itemize}
     \item Oline tuning with RCDS is effective at optimizing injection efficiency
-    \item Some mysteries
-    \begin{itemize}
-        \item Larger kick resiliency $\centernot\implies$ larger phase portrait areas $\centernot\implies$ injection efficiency
-    \end{itemize}
-    \pause
-    \item WP 3 contributed for SIRIUS recent milestone of reaching $<1\%~\sigma_x$ and $<4\%~\sigma _y$ orbit rms variations in the horizontal and vertical planes, respectively.\\
-    \end{itemize}
-    \begin{minipage}{0.7\textwidth}
-        \begin{figure}
-            \centering
-            \includegraphics[width=0.9\textwidth]{WEOGA2_f5.png}
-        \end{figure}
-    \end{minipage}
-    \hfill
-    \begin{minipage}{0.29\textwidth}
-        \scriptsize
-        L. Liu \emph{et al}., “Status of SIRIUS operation with users”,
-    presented at the IPAC’23, Venice, Italy, May 2023, paper
-    WEOGA2.
+    \item injection efficiency $\centernot\implies$ larger kick resiliency/larger phase portrait areas
+\end{itemize}
 
-    \end{minipage}
 \end{frame}
 
-\section{Fast Orbit Response Matrix Measruement}
-\begin{frame}{Fast ORM Measurement}
+\section{Fast (``AC") Measurement of Orbit Response Matrix}
+\begin{frame}{AC ORM Measurement}
     \begin{minipage}{0.44\textwidth}
         \begin{figure}
             \centering
@@ -373,7 +376,7 @@
                             u_{i}( t_{n})
                         \end{bmatrix}
                 \end{equation*}
-            \item Expected beam motion $$\Delta u_i(t)_n = \sum_j a_{i,j}\sin(2\pi f_j t_n + \phi_{i,j})$$
+            \item Expected beam motion $$\Delta u_i(t_n) = \sum_j a_{i,j}\sin(2\pi f_j t_n + \phi_{i,j})$$
                 \begin{equation*}
                     a_{i,j}=\sqrt{b^2_{i,j}+c^2_{i,j}}, \quad \phi_{i,j}=\text{atan}2(b_{i,j},c_{i,j})\in(-\pi,\pi]
                 \end{equation*}
@@ -384,7 +387,7 @@
         \end{itemize}
     \end{minipage}
 \end{frame}
-\begin{frame}{Measurements at SIRIUS storage ring and LOCO performance}
+\begin{frame}{Measurements at SIRIUS storage ring}
     \begin{minipage}{0.49\textwidth}
         \scriptsize
         SIRIUS BPMs-CMs circuit
@@ -393,7 +396,7 @@
             \item $n_x = 120$ CHs, $n_y=160$ CVs, $n=n_x+n_y=280$ CMs
         \end{itemize}
         \pause
-        Measurment Procedure
+        Measure     ment Procedure
         \begin{itemize}
             \item At each one of the \textbf{20 sectors},
             \begin{itemize}
@@ -404,24 +407,28 @@
             \item $\unit{5~\micro rad}$ strength, during $\unit{4~seconds}$.
             \item integer number of oscillations, orthogonal harmonics
             \end{itemize}
-            \item  The complete measurement took around $2.5-3\ \unit{min}$.
+            \item  The complete Measurement
+            \begin{itemize}
+                \scriptsize
+                \item 30 mins for DC method
+                \item $2.5-3\ \unit{min}$ AC method
+            \end{itemize}
         \end{itemize}
     \pause
-    AC- and DC-ORM signature correlation
-    \pause
-    \begin{itemize}
-        \scriptsize
-        \item $\cos\theta_j = \vb{v}_{\text{AC}, j}\centerdot \vb{v}_{\text{DC}, j}/\norm{\vb{v}_{\text{AC}, j}}\norm{\vb{v}_{\text{DC}, j}}$
-        \item avg $|1 - \cos\theta_j|\sim0.03\%$ for diagonal blocks and $\sim3\%$ for off-diagonal blocks
-    \end{itemize}
+    % AC- and DC-ORM signature correlation
+    % \pause
+    % \begin{itemize}
+    %     \scriptsize
+    %     \item $\cos\theta_j = \vb{v}_{\text{AC}, j}\centerdot \vb{v}_{\text{DC}, j}/\norm{\vb{v}_{\text{AC}, j}}\norm{\vb{v}_{\text{DC}, j}}$
+    %     \item avg $|1 - \cos\theta_j|\sim0.03\%$ for diagonal blocks and $\sim3\%$ for off-diagonal blocks
+    % \end{itemize}
     \end{minipage}
     \pause
     \hfill
     \begin{minipage}{0.49\textwidth}
-        \begin{figure}
-            \centering
-            \includegraphics[width=\textwidth]{MOPOTK002_f5.pdf}
-        \end{figure}
+        \centering
+        \includegraphics[width=\textwidth]{MOPOTK002_f4.pdf}
+        \includegraphics[height=0.6\textheight]{MOPOTK002_f5.pdf}
     \end{minipage}
 \end{frame}
 \begin{frame}[plain, noframenumbering]
@@ -432,7 +439,7 @@
     \begin{figure}
         \centering
         \scriptsize
-        M. M. S. Velloso is supported by the São Paulo Reseach Foundation via Grant \#2022/04162-4
+        M. M. S. Velloso is supported by the São Paulo Reseach Foundation (FAPESP) via Grant \#2022/04162-4
         \includegraphics[width=4cm]{fapesp.png}
     \end{figure}
     \begin{minipage}{0.49\textwidth}
