@@ -185,27 +185,33 @@
 
 \end{frame}
 
-\begin{frame}{RCDS optimization setup}
-    \begin{minipage}{0.49\textwidth}
+\begin{frame}{RCDS Dynamic Aperture Optimization Setup}
+    \begin{minipage}{0.6\textwidth}
+        \scriptsize
+        Robust conjugate direction search (RCDS) for DA optimization:
         \begin{itemize}
-        \item objective function: avg. injection efficiency of 5 pulses @ $\unit{2~Hz}$
+        \item objective function: avg. injection efficiency of 5 pulses @ $\unit{2~Hz}$ ($\sigma\approx1\%$)
         \begin{itemize}
+            \scriptsize
             \item beam at the DA border to reduce efficiency
         \end{itemize}
-        \item available knobs: 21 sextupole families \begin{itemize}
+        \item available knobs: 21 sextupole families
+        \begin{itemize}
+            \scriptsize
             \item knobs $\in$ chromaticity response matrix nullspace (13, 17 knobs)
             \item 13 free knobs + 6 compensation knobs
         \end{itemize}
+        \item  Tuning in 3 machine working points: higher fractional tunes for improved orbit stability
         \end{itemize}
         \vfill
-
-        \scriptsize
+        \tiny
         More details:\\
-
-        M. M. S. Velloso, M. B. Alves,  L. Liu, X. R. Resende, F. H. de Sá, and X. Huang, “Online optimization of SIRIUS nonlinear optics”,
-        \textit{presented at IPAC'23}, Venice, Italy, May 2023,
+        M. M. S. Velloso, M. B. Alves,  L. Liu, X. R. Resende, F. H. de Sá, and X. Huang, in \emph{Proc. IPAC'23} Venezia, 05 2023, pp. 3222-3226\\
+        {\tiny About RCDS:\\
+        X. Huang, J. Corbett, J. Safranek, J. Wu, \emph{Nucl. Instr. Meth.}, vol 726, pp.77-83, 2013.\\
+        X. Huang, J. Safranek, \emph{Phys. Rev. ST Accel. Beams}, vol 18, p.18}
     \end{minipage}
-    \begin{minipage}{0.49\textwidth}
+    \begin{minipage}{0.39\textwidth}
         \centering
         SIRIUS sextupole families
         \begin{table}[]
