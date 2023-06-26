@@ -174,22 +174,6 @@
     \begin{minipage}{0.48\textwidth}
         88\% efficiency observed
     \end{minipage}
-    % \begin{minipage}{0.49\textwidth}
-    %     \begin{figure}
-    %         \centering
-    %     \end{figure}
-    %     \begin{figure}
-    %         \centering
-    %         \includegraphics[width=0.8\textwidth]{nlk_phase_space.png}
-    %     \end{figure}
-    % \end{minipage}
-    % \begin{minipage}{0.49\textwidth}
-    %     \begin{itemize}
-    %         \item 100\% efficiency with a $x=-9~\unit{mm}$ DA
-    %         \item $88\pm8\%$ efficiency is observed
-    %     \end{itemize}
-    % \end{minipage}
-
 \end{frame}
 
 \begin{frame}{RCDS Dynamic Aperture Optimization Setup}
@@ -241,7 +225,6 @@
             \includegraphics[width=\textwidth]{oldtunes_history.pdf}
             \pause
             \includegraphics[width = 0.75\textwidth]{WEPL087_f1.pdf}
-            \pause
             \scriptsize
             \begin{table}[]
                 \begin{tabular}{ccc}
@@ -255,7 +238,6 @@
                 \end{table}
         \end{figure}
     \end{minipage}
-    \pause
     \hfill
     \begin{minipage}{0.42\textwidth}
         \begin{figure}
@@ -271,7 +253,6 @@
             \includegraphics[width=\textwidth]{newtunes_history.pdf}
             \pause
             \includegraphics[width = 0.75\textwidth]{WEPL087_f3.pdf}
-            \pause
             \begin{table}[]
                 \scriptsize
                 \begin{tabular}{ccc}
@@ -284,7 +265,6 @@
                 \end{table}
         \end{figure}
     \end{minipage}
-    \pause
     \hfill
     \begin{minipage}{0.44\textwidth}
         \begin{figure}
@@ -300,7 +280,6 @@
             \includegraphics[width=\textwidth]{wp3_history.pdf}
             \pause
             \includegraphics[width = 0.75\textwidth]{wp3_kick_resilience.pdf}
-            \pause
             \begin{table}[]
                 \scriptsize
                 \begin{tabular}{ccc}
@@ -312,7 +291,6 @@
                 \end{table}
         \end{figure}
     \end{minipage}
-    \pause
     \hfill
     \begin{minipage}{0.44\textwidth}
         \begin{figure}
@@ -460,6 +438,17 @@ WEOGA2.
         \end{figure}
     \end{minipage}
     \vfill
-
+\end{frame}
+\begin{frame}[noframenumbering]{Backup - AC ORM precision}
+    \begin{equation*}
+        \sigma_{ij}^2 = \frac{1}{N-1}\sum_{k=1}^{N}(M_{ij}^k - \ev{M}_{ij})^2, \quad 
+        \gamma_j = \sqrt{\ev{\sigma_{ij}^2}_i}
+    \end{equation*}
+\end{frame}
+\begin{frame}[noframenumbering]{Backup - NLK field profile}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.7\textwidth]{nlk_phase_space.png}
+    \end{figure}
 \end{frame}
 \end{document}
