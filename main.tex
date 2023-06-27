@@ -71,7 +71,7 @@
         ] (title) at (current page.center)
         {
             \LARGE Online Tuning of Storage Ring Nonlinear Dynamics  \\[5pt]
-            \small and Fast ORM Measruement at SIRIUS
+            \small and Fast ORM Measurement at SIRIUS
         };
 
         \node[below = 0.4cm, align=center] at (title.south)
@@ -119,7 +119,7 @@
     \hfill
     \begin{minipage}{0.62\textwidth}
         \scriptsize
-        4th generation storage ring based Synchrotron Light Source with $250~\unit{\pico\meter~rad}$ emittance. Designed, built and operated by the Brazilian Synchrotron Light Laboratory (LNLS), at the Brazilian Center for Research in Energy and Materials (CNPEM), Campinas, Brazil.\\
+        4th generation storage ring based synchrotron light source with $250~\unit{\pico\meter~rad}$ emittance. Designed, built and operated by the Brazilian Synchrotron Light Laboratory (LNLS), at the Brazilian Center for Research in Energy and Materials (CNPEM), Campinas, Brazil.\\
 
         \begin{tabular}{lccc}
                 \toprule\toprule
@@ -202,7 +202,10 @@
         M. M. S. Velloso, M. B. Alves,  L. Liu, X. R. Resende, F. H. de Sá, and X. Huang, in \emph{Proc. IPAC'23} Venezia, 05 2023, pp. 3222-3226. WEPL087 paper\\
         {\tiny About RCDS:\\
         X. Huang, J. Corbett, J. Safranek, J. Wu, \emph{Nucl. Instr. Meth.}, vol 726, pp.77-83, 2013.\\
-        X. Huang, J. Safranek, \emph{Phys. Rev. ST Accel. Beams}, vol 18, p.18}
+        X. Huang, J. Safranek, \emph{Phys. Rev. ST Accel. Beams}, vol 18, p.18}\\
+        {\tiny Implementations:\\
+        - \url{https://github.com/SPEAR3-ML/RCDS.git}\\
+        - \href{https://github.com/lnls-fac/apsuite/blob/7742d97c4af3d697ae11ce8961dc15579782288d/apsuite/optimization/rcds.py}{apsuite/optimization/rcds.py}}
     \end{minipage}
     \begin{minipage}{0.39\textwidth}
         \centering
@@ -392,12 +395,13 @@ WEOGA2.
             \item $\unit{5~\micro rad}$ strength, during $\unit{4~seconds}$.
             \item integer number of oscillations, orthogonal harmonics
             \end{itemize}
-            \item  The complete measurement
-            \begin{itemize}
-                \scriptsize
-                \item 30 mins for DC method
-                \item $2.5-3\ \unit{mins}$ AC method
-            \end{itemize}
+        \end{itemize}
+        \pause
+        The complete measurement
+        \begin{itemize}
+            \scriptsize
+            \item 30 mins for DC method
+            \item $2.5-3\ \unit{mins}$ AC method
         \end{itemize}
     \pause
     % AC- and DC-ORM signature correlation
